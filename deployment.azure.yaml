@@ -14,9 +14,11 @@ spec:
     spec: 
       containers: 
       - name: angular 
-        image: houssemdocker/angular-app:819
+        image: meetup.azurecr.io/miltoncamara/angular-app-kubernetes:#{Build.BuildId}#
         ports: 
         - containerPort: 80 
+      imagePullSecrets:
+        - name: meetupexample
 --- 
 # https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service  
 kind: Service 
